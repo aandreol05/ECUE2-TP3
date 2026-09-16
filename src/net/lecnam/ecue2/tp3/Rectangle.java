@@ -22,4 +22,13 @@ public class Rectangle {
     public void translate(double dx, double dy){
         this.origine.translate(dx,dy);
     }
+
+    public boolean contient(Point p3){
+        double xMin = this.origine.x;
+        double xMax = this.origine.x + this.longueur;
+        double yMin = this.origine.y;
+        double yMax = this.origine.y + this.largeur;
+
+        return (p3.x >= xMin && p3.x <= xMax) && (p3.y >= yMin && p3.y <= yMax);
+    }
 }
