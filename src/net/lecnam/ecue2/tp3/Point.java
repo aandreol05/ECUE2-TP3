@@ -9,6 +9,11 @@ public class Point {
         this.y = y;
     };
 
+    public void translate(double dx, double dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
