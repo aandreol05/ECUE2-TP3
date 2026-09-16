@@ -4,6 +4,6 @@ public class Rectangle {
 
     double longeur;
     double largeur;
-    Point origine = new Point(2,8);
+    Point origine ;
 
 }
