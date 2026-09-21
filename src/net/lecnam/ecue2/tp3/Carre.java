@@ -39,4 +39,21 @@ public class Carre {
         return Double.compare(carre.cote, cote) == 0 &&
                 carre.origine.equals(this.origine);
     }
+
+    public boolean contient(Rectangle r) {
+        if (r == null) return false;
+
+        double xMinCarre = this.origine.x;
+        double xMaxCarre = this.origine.x + this.cote;
+        double yMinCarre = this.origine.y;
+        double yMaxCarre = this.origine.y + this.cote;
+
+        double xMinRect = r.origine.x;
+        double xMaxRect = r.origine.x + r.longueur;
+        double yMinRect = r.origine.y;
+        double yMaxRect = r.origine.y + r.largeur;
+
+        return (xMinRect >= xMinCarre && xMaxRect <= xMaxCarre) &&
+                (yMinRect >= yMinCarre && yMaxRect <= yMaxCarre);
+    }
 }
