@@ -49,5 +49,22 @@ public class Exec {
         r3.translate(1, 1);
         System.out.println("r3 origine après translation (+1, +1) : " + r3.origine);
 
+        System.out.println("\n=== EXERCICE 3 : Tests de la classe Dessin ===");
+
+        Dessin dessin = new Dessin();
+
+        // Remplissage du dessin (ajout de 10 rectangles)
+        for (int i = 0; i < 10; i++) {
+            boolean ajoutReussi = dessin.ajout(new Rectangle(i, i, 2, 2));
+            System.out.println("Ajout rectangle " + (i + 1) + " : " + ajoutReussi);
+        }
+
+        // Test de dépassement de capacité (11ème rectangle)
+        boolean ajoutEnTrop = dessin.ajout(new Rectangle(0, 0, 1, 1));
+        System.out.println("Ajout d'un 11ème rectangle (devrait être false) : " + ajoutEnTrop);
+
+        // Test de la surface totale (10 rectangles de 2x2 = 10 * 4 = 40)
+        System.out.println("Surface totale du dessin : " + dessin.surfaceTotale());
+
         }
 }

@@ -19,4 +19,18 @@ public class Dessin {
         this.nbRectangles ++;
         return true ;
     }
+
+    public double surfaceTotale() {
+        double surfaceTotale = 0.0;
+        for (int i = 0; i < this.nbRectangles; i++) {
+            surfaceTotale += this.rectangles[i].retourneSurface();
+        }
+        return surfaceTotale;
+    }
+
+    public void translate(double x, double y){
+        for (int i = 0; i < this.nbRectangles; i++){
+            this.rectangles[i].translate(x,y);
+        }
+    }
 }
