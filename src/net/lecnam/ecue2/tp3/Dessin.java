@@ -11,4 +11,12 @@ public class Dessin {
         this.nbRectangles = 0;
     }
 
+    public boolean ajout(Rectangle r){
+        if (r == null || this.nbRectangles >= CAPACITE_MAX){
+            return false;
+        }
+        this.rectangles[this.nbRectangles] = r;
+        this.nbRectangles ++;
+        return true ;
+    }
 }
