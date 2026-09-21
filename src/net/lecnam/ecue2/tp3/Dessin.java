@@ -33,4 +33,18 @@ public class Dessin {
             this.rectangles[i].translate(x,y);
         }
     }
+
+    public Rectangle retournePlusGrandRectangle(){
+        if (this.nbRectangles == 0){
+            return null;
+        }
+        Rectangle plusGrandRectangle = this.rectangles[0];
+
+        for (int i =0 ; i < this.nbRectangles; i++){
+            if (this.rectangles[i].retourneSurface() > plusGrandRectangle.retourneSurface()){
+                plusGrandRectangle = this.rectangles[i];
+            }
+        }
+        return plusGrandRectangle;
+    }
 }
