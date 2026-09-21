@@ -31,4 +31,12 @@ public class Rectangle {
 
         return (p3.x >= xMin && p3.x <= xMax) && (p3.y >= yMin && p3.y <= yMax);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Rectangle rectangle = (Rectangle) obj ;
+        return (Double.compare(rectangle.longueur, longueur) == 0 &&
+                Double.compare(rectangle.largeur, largeur) == 0 &&
+                rectangle.origine.equals(this.origine));
+    }
 }
